@@ -17,37 +17,20 @@
         .video-container {
             text-align: center;
         }
-        video {
+        img {
+            cursor: pointer;
             max-width: 100%;
             height: auto;
-        }
-        .embed-video {
-            display: none;
         }
     </style>
 </head>
 <body>
     <div class="video-container">
         <h1>My Video</h1>
-        <video id="videoElement" width="640" height="360" controls poster="thumbnail.jpg" onclick="playEmbeddedVideo()">
-            <source src="https://drive.google.com/uc?export=view&id=1iR32VzmoDTmBT6VVwDmAZOrEothf83wd" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="embed-video" id="embedVideo">
-            <iframe id="videoFrame" width="640" height="360" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <a href="https://drive.google.com/file/d/1iR32VzmoDTmBT6VVwDmAZOrEothf83wd/view" target="_blank">
+            <img src="thumbnail.jpg" alt="Video Thumbnail">
+        </a>
     </div>
-
-    <script>
-        function playEmbeddedVideo() {
-            var videoElement = document.getElementById('videoElement');
-            var embedVideo = document.getElementById('embedVideo');
-            var videoFrame = document.getElementById('videoFrame');
-            videoElement.style.display = 'none';
-            embedVideo.style.display = 'block';
-            videoFrame.src = "https://drive.google.com/file/d/1iR32VzmoDTmBT6VVwDmAZOrEothf83wd/preview";
-        }
-    </script>
 </body>
 </html>
 
