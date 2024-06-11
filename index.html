@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Player</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .video-container {
+            text-align: center;
+        }
+        .video-container img {
+            cursor: pointer;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>My Video</h1>
-    <iframe src="https://drive.google.com/file/d/1iR32VzmoDTmBT6VVwDmAZOrEothf83wd/preview" width="640" height="360" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-container">
+        <h1>My Video</h1>
+        <img src="thumbnail.jpg" alt="Video Thumbnail" onclick="openVideo()">
+        <div id="videoPlayer" style="display: none;">
+            <iframe id="videoFrame" src="" width="640" height="360" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openVideo() {
+            var videoPlayer = document.getElementById('videoPlayer');
+            var videoFrame = document.getElementById('videoFrame');
+            videoFrame.src = "https://drive.google.com/file/d/1iR32VzmoDTmBT6VVwDmAZOrEothf83wd/preview";
+            videoPlayer.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
