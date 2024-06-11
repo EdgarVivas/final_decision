@@ -17,8 +17,7 @@
         .video-container {
             text-align: center;
         }
-        .video-container img {
-            cursor: pointer;
+        video {
             max-width: 100%;
             height: auto;
         }
@@ -27,19 +26,10 @@
 <body>
     <div class="video-container">
         <h1>My Video</h1>
-        <img src="thumbnail.jpg" alt="Video Thumbnail" onclick="openVideo()">
-        <div id="videoPlayer" style="display: none;">
-            <iframe id="videoFrame" src="" width="640" height="360" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <video width="640" height="360" controls poster="thumbnail.jpg">
+            <source src="https://drive.google.com/uc?export=download&id=1iR32VzmoDTmBT6VVwDmAZOrEothf83wd" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-
-    <script>
-        function openVideo() {
-            var videoPlayer = document.getElementById('videoPlayer');
-            var videoFrame = document.getElementById('videoFrame');
-            videoFrame.src = "https://drive.google.com/file/d/1iR32VzmoDTmBT6VVwDmAZOrEothf83wd/preview";
-            videoPlayer.style.display = 'block';
-        }
-    </script>
 </body>
 </html>
